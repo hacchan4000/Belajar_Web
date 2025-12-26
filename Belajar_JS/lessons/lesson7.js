@@ -12,3 +12,7 @@ async (params) => {
     
 }
 
+const fungsi2 = () => {
+
+}
+

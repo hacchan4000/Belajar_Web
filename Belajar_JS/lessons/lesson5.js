@@ -10,7 +10,9 @@ const anu = Int16Array()
 const anu2 = Float32Array()
 const anu3 = String()
 
+const ternier = huruf === 'abcd' ? true : false
 
-const fungsi = () => {
 
+const fungsi = (param1) => {
+    return param1 + 1
 }
