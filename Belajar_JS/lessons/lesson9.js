@@ -1,3 +1,3 @@
 //Document Object Model
 
-dom = Document.name()
+dom = document.body.innerHTML() // ngambil elemen body dalam 
