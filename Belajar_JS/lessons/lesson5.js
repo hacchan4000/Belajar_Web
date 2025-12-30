@@ -1,4 +1,7 @@
 //Variables
+/**
+ * 
+ */
 
 const angka = 1
 const huruf = 'abcd'
@@ -16,3 +19,9 @@ const ternier = huruf === 'abcd' ? true : false
 const fungsi = (param1) => {
     return param1 + 1
 }
+
+/**
+ * lesson 5 exercise
+ * 
+ * challenge n exercise
+ */

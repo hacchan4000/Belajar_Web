@@ -11,3 +11,9 @@ if (condition) {
     
 }
 
+/**
+ * lesson 6 exercise
+ * 
+ * challenge n exercise
+ */
+

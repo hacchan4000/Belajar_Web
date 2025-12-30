@@ -16,3 +16,8 @@ const fungsi2 = () => {
 
 }
 
+/**
+ * lesson 7 exercise
+ * 
+ * challenge n exercise
+ */

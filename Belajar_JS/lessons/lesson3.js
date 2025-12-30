@@ -25,3 +25,15 @@ String(123)
 
 JSON.stringify()
 
+/**
+ * lesson 3 exercise
+ * 3a
+ * 3b 
+ * 3c
+ * 3d
+ * 3e
+ * 3f
+ * 
+ * challenge n exercise
+ */
+

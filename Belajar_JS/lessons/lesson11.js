@@ -41,5 +41,11 @@ array2.map(item = () => {
 
 })
 
+/**
+ * lesson 11 exercise
+ * 
+ * challenge n exercise
+ */
+
 
 

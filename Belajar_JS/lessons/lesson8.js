@@ -8,3 +8,9 @@ class test {
         atr1 = parameters
     }
 }
+
+/**
+ * lesson 8 exercise
+ * 
+ * challenge n exercise
+ */
