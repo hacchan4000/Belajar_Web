@@ -1,14 +1,19 @@
 //numbers and math
 
 /**
+ * js bisa ngitung angka dan decimal
+ * 
  * operator aritmatika dalam js ada :
    + - * / ()
- * angka diitung sesuai urutan operasi dann kurung
+ * angka diitung sesuai urutan operasi dan kurung
+   kali ato bagi dluan baru tambah ato kurang kecuali ad kurung maka yg 
+   dalem kurung duluan
  */
 
 /**
- * komputer susa nyimpen floats karena representasi biner dari float panjang dan hanya mendekati nilai tertentu
- * contoh: 
+ * komputer susa nyimpen floats karena representasi biner dari float panjang dan 
+   hanya mendekati nilai tertentu
+   contoh: 
  * 0.1 + 0.2 = 0.30000000000000004
  * kalo ngitung uang pake floats bisa masalah
  * cara nangulanginnya
@@ -19,14 +24,14 @@
 const angka = Math.round((2095 + 799)*0.1)/100
 
 const random = Math.random()
+Math.ceil()
+Math.floor()
 
 /**
  * Lesson 2 exercise 
- * 2a
- * 2b
- * 2c
- * 2d
- * 2e
+ * 2a 10 + 8 * 3 + 5 = 39
+ * 2b. 39 / 3 = 13
+ * 2c. 18.50 + 2 * 7.50
  * 2h. Math.round((1899 + 2095 + 799 + 499) * 0.1)/100
  * challenge n exercise
  * 2j. cara biar selalu bulatin keatas Math.ceil()
@@ -34,3 +39,5 @@ const random = Math.random()
  * 2l. 25 Celcius = (25 * 9/5)+32 = 77 Fahrenheit
  * 2m. 86 Fahrenheit = (86-32)*5/9 = 30 Celcius
  */
+
+//completed

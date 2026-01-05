@@ -1,7 +1,7 @@
 //strings
 
 /**
- * string itu salah satu tipe data berupa teks ato kumpulan karakter alphanum
+ * string itu salah satu tipe data berupa teks ato kumpulan karakter alphanum '...'
  * string bisa digabung pake 'ngen' + 'tot' + ... = 'ngentot' ini namany konkatenasi
  * 
  * klo mau tau tipe sesuatu dlm js bisa pake typeof()
@@ -27,13 +27,31 @@ JSON.stringify()
 
 /**
  * lesson 3 exercise
- * 3a
- * 3b 
- * 3c
- * 3d
- * 3e
- * 3f
+ * 3a 'my name is'
+ * 3b 'aditya'
+ * 3c 'my name is' + 'bella hadid'
+ * 3d 'total cost: $' + (5+3)
+ * 3e `total cost: $ ${5+3}`
+ * 3f alert(`total cost: $ ${5+3}`)
+ * 3j alert(`total cost: $ ${(599+295)/100} \n datang lg y mek`)
  * 
  * challenge n exercise
+ * 3k alert(`Items (${2+2}):  $${(2095+799)*2/100}`)
+ * 3l
+ * 3m const total = ((2095+799)*2/100) + (499*2/100)
+      alert(`Items (${2+2}):  $${(2095+799)*2/100} 
+      \nShipping n handling : $${499*2/100} 
+      \nTotal before tax: $${total}`)
+ * 
+ * 3n const tax = Math.round(total*100/10)/100
+ 
+      alert(`Items (${2+2}):  $${(2095+799)*2/100} 
+      \nShipping n handling : $${499*2/100} 
+      \nTotal before tax: $${total}
+      \n Estimated tax (10%): $${tax}
+      `)
+      
  */
+
+      //completed
 
