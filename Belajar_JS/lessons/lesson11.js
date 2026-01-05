@@ -41,6 +41,11 @@ array2.map(item = () => {
 
 })
 
+const roleHandler = {
+  admin: () => "Dashboard Admin",
+  user: () => "Dashboard User",
+};
+
 /**
  * lesson 11 exercise
  * 

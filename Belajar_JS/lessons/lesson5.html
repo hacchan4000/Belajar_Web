@@ -6,9 +6,25 @@
   <title>Lesson 5</title>
 </head>
 <body>
-  <p>halo</p>
+  <p>cart quantity</p>
+  <button >show quantity</button>
+  <button onclick="tambah(1)">add to cart</button>
+  <button onclick="tambah(2)">+2</button>
+  <button onclick="tambah(3)">+3</button>
+  <button onclick="reset()">reset cart</button>
 
-  <script src="lesson5.js">
+  <script>
+    let quantity = 0;
+    function tambah(angka){
+      quantity = quantity + angka
+      return(console.log(`Cart Quantity: ${quantity}`))
+    }
+    function reset(){
+      quantity = 0
+      return(console.log(`Cart was reset, Quantity: ${quantity}`))
+    }
+    
+    
   </script>
   
 </body>
