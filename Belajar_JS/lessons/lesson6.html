@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+</head>
+<body>
+
+  <button onclick="rock()">rock</button>
+  <button onclick="paper()">paper</button>
+  <button onclick="scissor()">scissor</button>
+  <h1 id="resultPlayer"></h1>
+  <h1 id="resultComp"></h1>
+  
+  <script>  
+    function match(){
+      let pilihanComp = Math.random()
+      let hasilComp = ''
+
+      if (pilihanComp < 0.3) {
+        hasilComp = 'rock'
+      } else if (pilihanComp >= 0.3 && pilihanComp < 0.6) {
+        hasilComp = 'paper'
+      }
+      else {
+        hasilComp = 'scissor'
+      }
+
+      return hasilComp
+    }
+
+
+
+    function rock(){ //pilihan player
+      let comp = match()
+      if(comp === 'rock'){
+        alert("computer choose rock \nTIE")
+      }else if (comp === 'scissor'){
+        alert("computer choose scissor \nWIN")
+      }else {
+        alert("computer choose paper \nLOSE")
+      }
+    }
+    function paper(){
+      let comp = match()
+      if(comp === 'paper'){
+        alert("computer choose paper \nTIE")
+      }else if (comp === 'scissor'){
+        alert("computer choose scissor \nLOSE")
+      }else {
+        alert("computer choose rock \nWIN")
+      }
+    }
+    function scissor(){
+      let comp = match()
+      if(comp === 'scissor'){
+        alert("computer choose scissor \nTIE")
+      }else if (comp === 'rock'){
+        alert("computer choose rock \nLOSE")
+      }else {
+        alert("computer choose paper \nWIN")
+      }
+    }
+
+  </script>
+</body>
+</html>

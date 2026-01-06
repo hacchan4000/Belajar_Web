@@ -15,15 +15,20 @@ for (let index = 0; index < array.length; index++) {
     
 } // for pertama
 
-/** komen panjang */
+
+
 
 for await (const element of object) {
     
 } // for versi kedua
 
+
+
 array.forEach(element => {
     
 });// for versi ketiga
+
+
 
 for (const key in object) {
     if (!Object.hasOwn(object, key)) continue;
@@ -32,6 +37,8 @@ for (const key in object) {
     
     
 } // for versi keempat
+
+
 
 for (const element of object) {
     

@@ -3,9 +3,9 @@
  * variabel itu kea container untuk nampung value utk dipake nanti
  * 
  * ada 3 tipe variabel dlm js:
-  - let
-  - const
-  - var
+  - let namaVar : value bsa diubah
+  - const namaVar : value konstan trs gabisa diubah/reassign
+  - var namaVar : itu g peduli scope n jaranng dipake
  * 
  * 
  */
@@ -35,8 +35,22 @@ const fungsi = (param1) => {
 }
 
 
+
 /**
  * lesson 5 exercise
+
+ * const nama = 'aditya'
+ * const cost = 5+3*2+9
+ * const tax = cost * 0.1
  * 
+ * 5b console.log(`my name is ${nama}`)
+ * 5f console.log(`cost of food $${cost}`)
+ * 5g console.log(`tax(10%): $${tax}`)
+ * 5h console.log(`total cost: $${cost + tax}`)
+ 
  * challenge n exercise
+bikin app kalkulator lagi
+uda aku bikin di lesson5.html
  */
+
+//completed

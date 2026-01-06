@@ -11,19 +11,157 @@
   <button onclick="tambah(1)">add to cart</button>
   <button onclick="tambah(2)">+2</button>
   <button onclick="tambah(3)">+3</button>
+  <button onclick="tambah(4)">+4</button>
+  <button onclick="tambah(5)">+5</button>
   <button onclick="reset()">reset cart</button>
+  <button onclick="remove(1)"> remove from cart</button>
+  <button onclick="tambah(-2)">-2</button>
+  <button onclick="tambah(-3)">-3</button>
+
+  <br>
+  <p>app kalkulator</p>
+  <p></p>
+
+  <!--app kalkulator-->
+  <h1 id="myNums"></h1>
+  <p>
+    <button onclick="kalkulator(1)">1</button>
+    <button onclick="kalkulator(2)">2</button>
+    <button onclick="kalkulator(3)">3</button>
+    <button onclick="kalkulator(4)">4</button>
+  </p>
+  <p>
+    <button onclick="kalkulator(5)">5</button>
+    <button onclick="kalkulator(6)">6</button>
+    <button onclick="kalkulator(7)">7</button>
+    <button onclick="kalkulator(8)">8</button>
+  </p>
+  <p>
+  
+    <button onclick="kalkulator(9)">9</button>
+    <button onclick="kalkulator(0)">0</button>
+    <button onclick="kalkulator('+')">+</button>
+    <button onclick="kalkulator('-')">-</button>
+  </p>
+  <p>
+    <button onclick="kalkulator('*')">*</button>
+    <button onclick="kalkulator('/')">/</button>
+    <button onclick="">%</button>
+    <button onclick="kalkulator('=')">=</button>
+    <button onclick="kalkulator('AC')">AC</button>
+  </p>
+
+  
+
+  
 
   <script>
     let quantity = 0;
-    function tambah(angka){
-      quantity = quantity + angka
+    const nama = 'aditya'
+    const cost = 5+3*2+9
+    const tax = cost * 0.1
+
+
+    function tambah(equation){
+      quantity += equation
+      //bsa ditulis juga quantity += equation
+      // ato quality++ untuk plus 1
+      
       return(console.log(`Cart Quantity: ${quantity}`))
     }
     function reset(){
       quantity = 0
       return(console.log(`Cart was reset, Quantity: ${quantity}`))
     }
-    
+
+    function remove(equation){
+      quantity -= equation
+      return(console.log(`Cart Quantity: ${quantity}`))
+    }
+
+    console.log(`my name is ${nama}`)
+    console.log(`cost of food $${cost}`)
+    console.log(`tax(10%): $${tax}`)
+    console.log(`total cost: $${cost + tax}`)
+
+
+    // app kalkulator
+
+    let equation = ''
+    let stack = []
+    const listOperator = [
+    '+','-','*','/'
+    ]
+
+    function itung(persamaaan){
+      let angka1 = '';
+      let angka2 = '';
+      let operator = '';
+
+      let state = true // kalo true lg ngisi angka1 klo false isi angka2
+      //buat pengecek elemen yang sekarang itu angka apa simbol
+
+
+      for (let index = 0; index < persamaaan.length; index++) {
+
+        if(state){
+          angka1 += persamaaan[index]
+        }
+        // setelah ketemu operator state berubah
+        if(listOperator.includes(persamaaan[index])){
+          operator += persamaaan[index]
+          state = false
+        }
+        if(!state){
+          angka2 += persamaaan[index]
+        }
+       // pas loop ini selese ak harus dah ada angka1,2 sm operator
+      }
+      angka1 = parseInt(angka1)
+      angka2 = parseInt(angka2)
+
+      switch (operator) {
+          case '+':
+              return `${angka1+angka2}`
+              break;
+          case '-':
+              return `${angka1-angka2}`
+              break;
+          case '*':
+              return `${angka1*angka2}`
+              break;
+          case '/':
+              return `${angka1/angka2}`
+              break;
+
+          default:
+          return ''
+              break;
+      }
+
+    }
+
+    function kalkulator(char){
+      if(char === 'AC'){
+        document.getElementById("myNums").textContent = 0
+        equation = ''
+        return ''
+      }
+
+      if(char === '='){
+
+        let hasil = itung(equation)
+        document.getElementById("myNums").textContent = hasil // ini pake DOM untuk ngubah elemen html via js
+        angka = hasil
+        equation = hasil
+        return ''
+      }
+
+      equation += char
+      document.getElementById("myNums").textContent = equation
+      return console.log(equation)
+      
+    }
     
   </script>
   

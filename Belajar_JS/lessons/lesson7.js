@@ -1,20 +1,40 @@
 //function
 
+//fungsi biasa
 function name(params) {
     
 }
 
-async function name(params) {
+
+
+//async funtcion
+async function ambilData(params) { // karena ada async nya brarti fungsi ini bakal selalu kembaliin Promise
+  // bsa pake await
+  // bsa di hoist
     
+  // cnthh
+  const hasil = await fetch('api/data')
+  return hasil.json()
 }
+//cara manggil
+ambilData().then(data => console.log(data)) 
+// dipake pas API calls, database ato file systems
 
-async (params) => {
+
+
+//async arrow function
+setTimeout(async (params) => {
     
+},10)
+// ini dipake pas Callback, Inline logic, Event handler
+
+
+
+const fungsi2 = (a,b) => {
+  return a+b
 }
 
-const fungsi2 = () => {
-
-}
+fungsi2(3,4)
 
 /**
  * lesson 7 exercise
