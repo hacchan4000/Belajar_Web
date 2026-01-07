@@ -10,14 +10,45 @@
   <button onclick="rock()">rock</button>
   <button onclick="paper()">paper</button>
   <button onclick="scissor()">scissor</button>
-  <h1 id="resultPlayer"></h1>
-  <h1 id="resultComp"></h1>
+  <button onclick="reset()">Reset</button>
+  <h1 id="resultPlayer">Wins : </h1>
+  <h1 id="resultComp">Loses : </h1>
+  <h1 id="ties">Ties :</h1>
   
   <script>  
+    const skor = JSON.parse(localStorage.getItem('skor')) || {
+        skorPlayer: 0,
+        skorComp: 0,
+        ties: 0,
+    }
+    document.getElementById("resultPlayer").textContent = `Wins : ${skor.skorPlayer}`
+    document.getElementById("resultComp").textContent = `Loses : ${skor.skorComp}`
+    document.getElementById("ties").textContent = `Ties : ${skor.ties}`
+
+    // jaga-jaga klo skor jd null, dibawah ini sama aja kea || diatas
+    /*
+    if(!skor){ // gabisa skor === null krn null itu falsy, kalo !null = true
+      skor = {
+        skorPlayer: 0,
+        skorComp: 0,
+        ties: 0,
+      }
+    }
+      
+    */
+
+    function reset(){
+      skor.skorPlayer = 0 ,skor.skorComp = 0, skor.ties = 0
+
+      document.getElementById("ties").textContent = `Ties : ${skor.ties}`
+      document.getElementById("resultPlayer").textContent = `Wins : ${skor.skorPlayer}`
+      document.getElementById("resultComp").textContent = `Loses : ${skor.skorComp}`
+      
+    }
     function match(){
       let pilihanComp = Math.random()
       let hasilComp = ''
-
+      
       if (pilihanComp < 0.3) {
         hasilComp = 'rock'
       } else if (pilihanComp >= 0.3 && pilihanComp < 0.6) {
@@ -30,39 +61,63 @@
       return hasilComp
     }
 
-
+    
 
     function rock(){ //pilihan player
       let comp = match()
       if(comp === 'rock'){
         alert("computer choose rock \nTIE")
+        document.getElementById("ties").textContent = `Ties : ${skor.ties+=1}`
+        localStorage.setItem('skor',JSON.stringify(skor)) // masukin pesan ke local storage dengan identifier message
+        
       }else if (comp === 'scissor'){
         alert("computer choose scissor \nWIN")
+        document.getElementById("resultPlayer").textContent = `Wins : ${skor.skorPlayer+=1}`
+        localStorage.setItem('skor',JSON.stringify(skor))
       }else {
         alert("computer choose paper \nLOSE")
+        document.getElementById("resultComp").textContent = `Loses : ${skor.skorComp+=1}`
+        localStorage.setItem('skor',JSON.stringify(skor))
       }
+      console.log(localStorage.getItem('skor')) // cara ngeluarin pesan dr local storage
+
     }
     function paper(){
       let comp = match()
       if(comp === 'paper'){
         alert("computer choose paper \nTIE")
+        document.getElementById("ties").textContent = `Ties : ${skor.ties+=1}`
+        localStorage.setItem('skor',JSON.stringify(skor))
       }else if (comp === 'scissor'){
         alert("computer choose scissor \nLOSE")
+        document.getElementById("resultComp").textContent = `Loses : ${skor.skorComp+=1}`
+        localStorage.setItem('skor',JSON.stringify(skor))
       }else {
         alert("computer choose rock \nWIN")
+        document.getElementById("resultPlayer").textContent = `Wins : ${skor.skorPlayer+=1}`
+        localStorage.setItem('skor',JSON.stringify(skor))
       }
+      console.log(localStorage.getItem('skor'))
     }
     function scissor(){
       let comp = match()
       if(comp === 'scissor'){
         alert("computer choose scissor \nTIE")
+        document.getElementById("ties").textContent = `Ties : ${skor.ties+=1}`
+        localStorage.setItem('skor',JSON.stringify(skor))
       }else if (comp === 'rock'){
         alert("computer choose rock \nLOSE")
+        document.getElementById("resultComp").textContent = `Loses : ${skor.skorComp+=1}`
+        localStorage.setItem('skor',JSON.stringify(skor))
       }else {
         alert("computer choose paper \nWIN")
+        document.getElementById("resultPlayer").textContent = `Wins : ${skor.skorPlayer+=1}`
+        localStorage.setItem('skor',JSON.stringify(skor))
       }
+      console.log(localStorage.getItem('skor'))
     }
 
+    
   </script>
 </body>
 </html>

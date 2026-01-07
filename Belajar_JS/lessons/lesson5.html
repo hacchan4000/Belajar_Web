@@ -151,9 +151,12 @@
       if(char === '='){
 
         let hasil = itung(equation)
-        document.getElementById("myNums").textContent = hasil // ini pake DOM untuk ngubah elemen html via js
+        localStorage.setItem('hasil', hasil)
+        document.getElementById("myNums").textContent = localStorage.getItem('hasil') // ini pake DOM untuk ngubah elemen html via js
         angka = hasil
         equation = hasil
+        
+        
         return ''
       }
 
