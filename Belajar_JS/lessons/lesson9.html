@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>halo</button>
+  <button class="tombolKedua">halo</button>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, facilis?</p>
+
+  <button class="subs" onclick="ganti()">subscribe</button>
+  <script>
+    function ganti(){
+      const kata = document.querySelector(".subs").innerHTML
+
+      kata === 'subscribe' ? document.querySelector(".subs").innerText = 'subscribed' : document.querySelector(".subs").innerText = 'subscribe'
+      
+    }
+    //object document itu representasiin dan terhubung ke web page nya
+
+    // kita bisa ngubah elemen dlm body html via js
+    //document.body.innerHTML = '<button>press me</button>'
+    document.title = 'DOM' //ganti title 
+
+    //console.log(document.body) ini literli ngambil tag body
+    //console.log(document.body.innerHTML) ini ngambil semua elemen dr <html>...</html>
+
+    // querySelector untuk ngambil elemen apapunn dr halaman n taro di js
+    document.querySelector('button') // objcet ini bakal ngambil elemen button pertama di page
+
+    console.log(document.querySelector('button').innerHTML)// ini ngambil text dlm button
+    document.querySelector('button').innerHTML = 'press me'
+
+    const tombol = document.querySelector('.tombolKedua').innerHTML = 'hiiii'
+  </script>
+</body>
+</html>

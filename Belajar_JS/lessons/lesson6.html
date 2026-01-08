@@ -6,16 +6,25 @@
   <title>Game</title>
 </head>
 <body>
+  <input type="text" onkeydown="handleKeys(event)">
 
   <button onclick="rock()">rock</button>
   <button onclick="paper()">paper</button>
   <button onclick="scissor()">scissor</button>
   <button onclick="reset()">Reset</button>
-  <h1 id="resultPlayer">Wins : </h1>
-  <h1 id="resultComp">Loses : </h1>
-  <h1 id="ties">Ties :</h1>
+
+  <p id="ket"></p>
+  <p class ="resFinal"></p>
+
+  <h4 id="resultPlayer">Wins : </h4>
+  <h4 id="resultComp">Loses : </h4>
+  <h4 id="ties">Ties :</h4>
   
   <script>  
+    function handleKeys(event){ // untuk liat keys yang diteken user di keyboard
+      return console.log(event.key)
+    }
+    console.log(event) // untuk nyatet semua yang diketik user di keyboard
     const skor = JSON.parse(localStorage.getItem('skor')) || {
         skorPlayer: 0,
         skorComp: 0,
@@ -43,6 +52,9 @@
       document.getElementById("ties").textContent = `Ties : ${skor.ties}`
       document.getElementById("resultPlayer").textContent = `Wins : ${skor.skorPlayer}`
       document.getElementById("resultComp").textContent = `Loses : ${skor.skorComp}`
+
+      document.getElementById("ket").textContent = ''
+      document.querySelector('.resFinal').innerHTML = ''
       
     }
     function match(){
@@ -60,22 +72,30 @@
 
       return hasilComp
     }
+    
+    
 
     
 
     function rock(){ //pilihan player
       let comp = match()
       if(comp === 'rock'){
-        alert("computer choose rock \nTIE")
+        document.getElementById("ket").textContent = `Computer choose ${comp} - You choose Rock`
+        document.querySelector('.resFinal').innerHTML = 'Ties'
+
         document.getElementById("ties").textContent = `Ties : ${skor.ties+=1}`
         localStorage.setItem('skor',JSON.stringify(skor)) // masukin pesan ke local storage dengan identifier message
         
       }else if (comp === 'scissor'){
-        alert("computer choose scissor \nWIN")
+        document.getElementById("ket").textContent = `Computer choose ${comp} - You choose Rock`
+        document.querySelector('.resFinal').innerHTML = 'Wins'
+
         document.getElementById("resultPlayer").textContent = `Wins : ${skor.skorPlayer+=1}`
         localStorage.setItem('skor',JSON.stringify(skor))
       }else {
-        alert("computer choose paper \nLOSE")
+        document.getElementById("ket").textContent = `Computer choose ${comp} - You choose Rock`
+        document.querySelector('.resFinal').innerHTML = 'Lose'
+
         document.getElementById("resultComp").textContent = `Loses : ${skor.skorComp+=1}`
         localStorage.setItem('skor',JSON.stringify(skor))
       }
@@ -85,15 +105,21 @@
     function paper(){
       let comp = match()
       if(comp === 'paper'){
-        alert("computer choose paper \nTIE")
+        document.getElementById("ket").textContent = `Computer choose ${comp} - You choose Paper`
+        document.querySelector('.resFinal').innerHTML = 'Ties'
+
         document.getElementById("ties").textContent = `Ties : ${skor.ties+=1}`
         localStorage.setItem('skor',JSON.stringify(skor))
       }else if (comp === 'scissor'){
-        alert("computer choose scissor \nLOSE")
+        document.getElementById("ket").textContent = `Computer choose ${comp} - You choose Paper`
+        document.querySelector('.resFinal').innerHTML = 'Lose'
+
         document.getElementById("resultComp").textContent = `Loses : ${skor.skorComp+=1}`
         localStorage.setItem('skor',JSON.stringify(skor))
       }else {
-        alert("computer choose rock \nWIN")
+        document.getElementById("ket").textContent = `Computer choose ${comp} - You choose Paper`
+        document.querySelector('.resFinal').innerHTML = 'Win'
+        
         document.getElementById("resultPlayer").textContent = `Wins : ${skor.skorPlayer+=1}`
         localStorage.setItem('skor',JSON.stringify(skor))
       }
@@ -102,15 +128,21 @@
     function scissor(){
       let comp = match()
       if(comp === 'scissor'){
-        alert("computer choose scissor \nTIE")
+        document.getElementById("ket").textContent = `Computer choose ${comp} - You choose Scissor`
+        document.querySelector('.resFinal').innerHTML = 'Ties'
+
         document.getElementById("ties").textContent = `Ties : ${skor.ties+=1}`
         localStorage.setItem('skor',JSON.stringify(skor))
       }else if (comp === 'rock'){
-        alert("computer choose rock \nLOSE")
+        document.getElementById("ket").textContent = `Computer choose ${comp} - You choose Scissor`
+        document.querySelector('.resFinal').innerHTML = 'Lose'
+
         document.getElementById("resultComp").textContent = `Loses : ${skor.skorComp+=1}`
         localStorage.setItem('skor',JSON.stringify(skor))
       }else {
-        alert("computer choose paper \nWIN")
+        document.getElementById("ket").textContent = `Computer choose ${comp} - You choose Scissor`
+        document.querySelector('.resFinal').innerHTML = 'Wins'
+
         document.getElementById("resultPlayer").textContent = `Wins : ${skor.skorPlayer+=1}`
         localStorage.setItem('skor',JSON.stringify(skor))
       }
