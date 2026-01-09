@@ -6,6 +6,9 @@ const array = [1,2,3,4,5,6,7,8]
 const arr = new Array(1, 2, 3) // array constructor
 const arr2 = Array.of(5)// buat array 5 elemen
 
+array.splice(0,1) // untuk hapus elemen dengan index tertentu
+// mksd paramny itu index elemen yg mw diapus sm dr index itu mw hapus berapa elemen
+
 const kamus = {}
 const kamus2 = {
     key: 'aditya',
@@ -19,7 +22,6 @@ const kamus2 = {
 //loops biasa antara array, object ato data async dengan index sebagai cara untuk memutari semua elemen dalam array 
 for (let index = 0; index < array.length; index++) {
     const element = array[index];
-    console.log(element)
     
 } // ini loop paling biasa yang ngasi kontrol penuh
 
@@ -76,20 +78,58 @@ const arrayBaru = array.map((item, index, arrayAsli) => {
 console.log(arrayBaru)
 
 array.filter(() => {
-  
+
 })
 
+
+
+// Loop while
+while (condition) {
+  
+}
+do {
+  
+} while (condition);
 
 const roleHandler = {
   admin: () => "Dashboard Admin",
   user: () => "Dashboard User",
 };
 
+//const array = [1,2,3,4,5,6,7,8]
+
+
 /**
  * lesson 11 exercise
+ * 11a 
+    const array3 = [10,20,30]
+    array3[array3.length()-1] = 99
+    console.log(array3)
+ * 11c 
+    function arraySwap(params) {
+      const arrayBaru = []
+      for (let index = params.length; index > 0; index--) {
+        arrayBaru.push(params[index-1])
+      }
+      return arrayBaru
+    }
+    const idk = arraySwap(array)
+    console.log(idk)
+ * 11d
+ * 11e
+ * 11f
+ * 11g 
+ * array.forEach(element => {
+    element++ // nambah 1 untuk semua elemen
+    console.log(element);
+});
+ * 11h
+ * 11i
+ * 11j
  * 
  * challenge n exercise
  */
 
+//completed
 
 

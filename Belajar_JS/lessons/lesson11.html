@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo</title>
+  <style>
+    .data{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    p {
+      max-width: 30px;
+    }
+    
+    .btn {
+      background-color: rgb(246, 178, 178);
+      border: none;
+      padding: none;
+    }
+    
+  </style>
+
+</head>
+<body>
+  <input class="title" type="text" placeholder="your todos">
+  <input class="date" type="date">
+  <button onclick="addTodos()">submit</button>
+
+  <div class="data2">
+    
+  </div>
+  
+  <script>
+    const todo = []
+    let todoList = ''
+
+    function display(){ // Read
+      const container = document.querySelector(".data2") 
+      container.innerHTML = ''
+
+      for (let index = 0; index < todo.length; index++) {
+        let item = todo[index]
+        container.innerHTML += `
+          <div class="data">
+            <p>${item.title}</p>
+            <p>${item.date}</p>
+            <button onclick="deleteTodos('${item.title}')" class="btn">delete</button>
+            <button onclick="editTodos()" class="btn">edit</button>
+          </div>
+          `
+       
+      }
+      
+    }
+
+    function addTodos(){ // Create
+      const title = document.querySelector('.title').value
+      const date = document.querySelector('.date').value
+      
+      todo.push({ title ,date })
+      display()
+    }
+
+    function deleteTodos(title){ //Delete
+      for (let index = 0; index < todo.length; index++) {
+        const item = todo[index];
+        if(item.title === title){
+          todo.splice(index,1)
+          display()
+        }
+        //console.log()
+        
+      }
+    }
+    function editTodos(){
+
+    }
+
+   
+
+  </script>
+</body>
+</html>
