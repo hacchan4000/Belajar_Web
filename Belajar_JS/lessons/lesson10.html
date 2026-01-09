@@ -1,32 +1,32 @@
-// HTML CSS n JS combine
-// ini skip aj cuz g seberapa penting
-
-/**
- * lesson 10 exercise aku kerjain di lesson10.html
- * 10g
- * <button onclick="toogle('gaming')" class="tombol gaming">Gaming</button>
-  <button onclick="toogle('music')" class="tombol music">Music</button>
-  <button onclick="toogle('tech')" class="tombol tech">Tech</button>
-
-  <script>
-    function toogle(desc){
-      const tombol = document.querySelector(`.${desc}`)
-      const cek = tombol.classList.contains('is-toggled')
-
-      let kondisi = cek
-
-      if(!kondisi){
-        tombol.classList.add('is-toggled')
-        kondisi = true
-        return
-      }else{
-         tombol.classList.remove('is-toggled')
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lesson 10</title>
+  <style>
+    .tombol{
+      margin: 10px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 5px;
       
+      border: none;
     }
-  </script>
+    .is-toggled{
+      background-color: black;
+      color: white;
+    }
 
-  10i
+  </style>
+</head>
+<body>
+  <button class="tombol">Add to cart</button>
+  <button class="js-button">Test</button>
+
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, recusandae.</p>
 
   <button onclick="toogle('gaming')" class="tombol gaming">Gaming</button>
   <button onclick="toogle('music')" class="tombol music">Music</button>
@@ -57,7 +57,6 @@
       
     }
   </script>
- * challenge n exercise
- */
-
-  //completed
+  
+</body>
+</html>

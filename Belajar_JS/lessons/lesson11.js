@@ -75,6 +75,10 @@ const arrayBaru = array.map((item, index, arrayAsli) => {
 })
 console.log(arrayBaru)
 
+array.filter(() => {
+  
+})
+
 
 const roleHandler = {
   admin: () => "Dashboard Admin",
