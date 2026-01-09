@@ -1,7 +1,10 @@
 //Arrays n loops
 
+//ARRAYS
 const array2 = []
 const array = [1,2,3,4,5,6,7,8]
+const arr = new Array(1, 2, 3) // array constructor
+const arr2 = Array.of(5)// buat array 5 elemen
 
 const kamus = {}
 const kamus2 = {
@@ -10,43 +13,68 @@ const kamus2 = {
     key: 'nugraha',
 }
 
+
+//LOOPS
+
+//loops biasa antara array, object ato data async dengan index sebagai cara untuk memutari semua elemen dalam array 
 for (let index = 0; index < array.length; index++) {
     const element = array[index];
+    console.log(element)
     
-} // for pertama
+} // ini loop paling biasa yang ngasi kontrol penuh
 
 
 
-
+// loop untuk data yang datangnya bertahap
 for await (const element of object) {
     
-} // for versi kedua
+} // contohnya
+for await (const chunk of readFileStream()) {
+  process(chunk)
+}
 
 
 
+// loop untuk melakukan sesuatu ke tiap elemennya tanpa break/return
 array.forEach(element => {
-    
-});// for versi ketiga
+    element++ // nambah 1 untuk semua elemen
+    console.log(element);
+});// biasanya dipake buat Logging, Render DOM, Update state dsb
 
 
 
+const object = {
+    nama : 'adit',
+    age: 21,
+    isVirgin: false
+}
+// loop untuk  dapatin value dari key object
 for (const key in object) {
     if (!Object.hasOwn(object, key)) continue;
     
     const element = object[key];
+    console.log(element)
     
     
 } // for versi keempat
 
 
-
+// loop untuk iter valueny aj g peduli index
 for (const element of object) {
     
 }
+//contoh 
+for (const char of "hello") {
+  console.log(char)
+}
 
-array2.map(item = () => {
 
+// ini bukan loop umum karena gunanya map adalah untuk MENGUBAH setiap elemen array menjadi bentuk BARU dan menghasilkan ARRAY BARU
+const arrayBaru = array.map((item, index, arrayAsli) => {
+  return item * 2 // tiap elemenny array dikali 2
 })
+console.log(arrayBaru)
+
 
 const roleHandler = {
   admin: () => "Dashboard Admin",

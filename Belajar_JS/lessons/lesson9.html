@@ -9,17 +9,41 @@
   <button>halo</button>
   <button class="tombolKedua">halo</button>
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, facilis?</p>
+  <button>9a</button>
+  <button class="b9" onclick="ganti()">9b</button>
 
   <button class="subs" onclick="ganti()">subscribe</button>
+
+  <button onclick="show('heads')" >heads</button>
+  <button onclick="show('tails')" >tails</button>
+
+  <p class="pilihan"></p>
+
+  <input class="input" type="text" placeholder="Type ur name" onkeydown="event.key === 'Enter'?display() : '' ">
+  <button onclick="display()">submit</button>
+
+  <p class="nama"></p>
   <script>
+    function show(p){
+      p === 'heads' ? document.querySelector(".pilihan").innerHTML = `You pick ${p}` :  document.querySelector(".pilihan").innerHTML = `You pick ${p}`
+    }
+    
     function ganti(){
+      /*
       const kata = document.querySelector(".subs").innerHTML
 
       kata === 'subscribe' ? document.querySelector(".subs").innerText = 'subscribed' : document.querySelector(".subs").innerText = 'subscribe'
+      */
+      const kata2 = document.querySelector(".b9").innerHTML
+      kata2 === "9b" ? document.querySelector(".b9").innerText = '9b done' : document.querySelector(".b9").innerText = '9b'
       
     }
     //object document itu representasiin dan terhubung ke web page nya
 
+    function display(){
+      const input = document.querySelector(".input").value
+      document.querySelector(".nama").innerHTML = `Your name is ${input}`
+    }
     // kita bisa ngubah elemen dlm body html via js
     //document.body.innerHTML = '<button>press me</button>'
     document.title = 'DOM' //ganti title 
