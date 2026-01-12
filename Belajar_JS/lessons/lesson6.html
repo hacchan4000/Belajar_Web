@@ -11,6 +11,8 @@
   <button onclick="paper()">paper</button>
   <button onclick="scissor()">scissor</button>
   <button onclick="reset()">Reset</button>
+  <button onclick="AutoPlay()" class="auto">Auto Play</button>
+
 
   <p id="ket"></p>
   <p class ="resFinal"></p>
@@ -146,6 +148,35 @@
         localStorage.setItem('skor',JSON.stringify(skor))
       }
       console.log(localStorage.getItem('skor'))
+    }
+
+    let isAutoPlay = false
+    let intervalId
+
+    function AutoPlay(){
+      if(!isAutoPlay){
+        intervalId = setInterval(() => { //untuk main trs" an
+          let randNum = Math.random()
+
+          if (randNum < 0.3) {
+            rock()
+          } else if (randNum >= 0.3 && randNum < 0.6) {
+            paper()
+          }
+          else {
+            scissor()
+          }
+        },2000)
+
+        document.querySelector(".auto").innerHTML = 'Stop'
+        isAutoPlay = true
+      }else {
+        // ini untuk stop setInterval
+        clearInterval(intervalId)
+        document.querySelector(".auto").innerHTML = 'Auto Play'
+        isAutoPlay = false
+      }
+      
     }
 
     

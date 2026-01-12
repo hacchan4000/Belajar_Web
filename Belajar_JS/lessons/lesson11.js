@@ -2,9 +2,12 @@
 
 //ARRAYS
 const array2 = []
-const array = [1,2,3,4,5,6,7,8]
+const array = [1,2,3,4,5,6,7,8] // var array itu cuma nyimpen referensi ke memori komputer tempat nyimpen actual values dr arraynnya
 const arr = new Array(1, 2, 3) // array constructor
 const arr2 = Array.of(5)// buat array 5 elemen
+
+//destruktr array
+const [valPertama,valKedua] = [1,2,3]
 
 array.splice(0,1) // untuk hapus elemen dengan index tertentu
 // mksd paramny itu index elemen yg mw diapus sm dr index itu mw hapus berapa elemen
@@ -17,11 +20,14 @@ const kamus2 = {
 }
 
 
+
 //LOOPS
 
 //loops biasa antara array, object ato data async dengan index sebagai cara untuk memutari semua elemen dalam array 
 for (let index = 0; index < array.length; index++) {
     const element = array[index];
+    continue // ini untuk skip satu buah iterasi
+    break // ini untuk keluar loop secara keseluruhan
     
 } // ini loop paling biasa yang ngasi kontrol penuh
 
@@ -38,10 +44,15 @@ for await (const chunk of readFileStream()) {
 
 
 // loop untuk melakukan sesuatu ke tiap elemennya tanpa break/return
+//const array = [1,2,3,4,5,6,7,8]
 array.forEach(element => {
     element++ // nambah 1 untuk semua elemen
     console.log(element);
 });// biasanya dipake buat Logging, Render DOM, Update state dsb
+//ato
+array.forEach(function (value, index) {
+  console.log(value)
+})
 
 
 
@@ -123,7 +134,18 @@ const roleHandler = {
     element++ // nambah 1 untuk semua elemen
     console.log(element);
 });
- * 11h
+ * 11o - 11q
+function findIndex(array, word) {
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+
+    if (element === word) {
+      return index
+    }
+    
+  }
+  return -1
+}
  * 11i
  * 11j
  * 

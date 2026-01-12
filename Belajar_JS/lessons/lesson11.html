@@ -6,9 +6,10 @@
   <title>Todo</title>
   <style>
     .data{
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: 200px 150px 100px 100px;
+      column-gap: 10px;
+      row-gap: 10px;
     }
     p {
       max-width: 30px;
@@ -18,6 +19,7 @@
       background-color: rgb(246, 178, 178);
       border: none;
       padding: none;
+      max-height: 30px;
     }
     
   </style>
@@ -28,6 +30,7 @@
   <input class="date" type="date">
   <button onclick="addTodos()">submit</button>
 
+  <button class="c12" onclick="ganti()">Start</button>
   <div class="data2">
     
   </div>
@@ -75,6 +78,22 @@
       }
     }
     function editTodos(){
+
+    }
+
+    let isStart = false
+    function ganti(){
+      if(!isStart){
+        setTimeout(()=>{
+          document.querySelector(".c12").innerHTML = 'Loading..'
+        },1000)
+        setTimeout(()=>{
+          document.querySelector(".c12").innerHTML = 'Finished'
+        },1000)
+        isStart = true
+      }else{
+
+      }
 
     }
 
